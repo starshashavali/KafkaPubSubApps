@@ -1,0 +1,22 @@
+package com.tcs.config;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+
+import com.tcs.dto.Order;
+
+@Configuration
+public class ConsumerConfig {
+	
+	
+	public ConsumerFactory<String, Order> consumerFactory(){
+		 Map<String, Object>configProp=new HashMap<>();
+		 //configProp.put(Consumer, value)
+		 return new DefaultKafkaConsumerFactory<>(configProp);
+	}
+
+}

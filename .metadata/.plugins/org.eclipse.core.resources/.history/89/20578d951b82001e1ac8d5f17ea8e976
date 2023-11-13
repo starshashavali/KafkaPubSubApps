@@ -1,0 +1,24 @@
+package com.tcs.config;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+
+import com.tcs.constants.AppConstants;
+import com.tcs.dto.Order;
+
+@Configuration
+public class KafkaConsumerConfig {
+	
+	
+	public ConsumerFactory<String, Order> consumerFactory(){
+		 Map<String, Object>configProp=new HashMap<>();
+		 configProp.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, AppConstants.HOST_NAME);
+		 return new DefaultKafkaConsumerFactory<>(configProp);
+	}
+
+}

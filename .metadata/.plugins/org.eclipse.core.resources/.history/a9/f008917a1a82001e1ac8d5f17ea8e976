@@ -1,0 +1,14 @@
+package com.tcs.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.ConsumerFactory;
+
+@Configuration
+public class ConsumerConfig {
+	
+	private ConsumerFactory<String, Order> consumerFactory(){
+		
+		
+	}
+
+}
